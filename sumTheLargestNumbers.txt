@@ -1,0 +1,20 @@
+const sumLargestNumbers = function(data) {
+    var sum = 0;
+    var largestFirstNum = 0;
+    var largestSecondNum = 0;
+  for(var i = 0; i < data.length; i++)
+  {
+      if(data[i] >= largestFirstNum)
+      {
+        largestSecondNum = largestFirstNum;
+        largestFirstNum = data[i];
+      }
+  }
+  sum = largestFirstNum + largestSecondNum;
+  console.log("first: " + largestFirstNum + " second: " + largestSecondNum)
+  return sum;
+};
+
+console.log(sumLargestNumbers([1, 10]));
+console.log(sumLargestNumbers([1, 2, 3]));
+console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2, 82]));
